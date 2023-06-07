@@ -50,6 +50,7 @@ if __name__ == '__main__':
             lib_file = open(boristown_path + "/" + lib + ".py", 'r')
             lib_code = lib_file.read()
             lib_file.close()
+            end_index+=1
             #把lib_code中的代码复制到input_code中，被注释的代码之后
             #copy the code in lib_code to input_code, after the commented out code
             input_code = input_code[:end_index] + "\n" + lib_code + "\n" +  input_code[end_index:]
