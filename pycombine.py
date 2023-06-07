@@ -36,7 +36,7 @@ if __name__ == '__main__':
         print("patten: " + patten)
         index = input_code.find(patten)
         if index != -1:
-            print('found code: from boristown.' + lib + ' import')
+            print('found code: ' + patten)
             #找到该行代码的位置
             #find the position of that line of code
             #index = input_code.find("from boristown." + lib + " import")
