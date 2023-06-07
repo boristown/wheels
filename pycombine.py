@@ -34,11 +34,12 @@ if __name__ == '__main__':
         #check if there is code in input_code: from boristown.[lib] import ...
         patten = "from boristown." + lib + " import"
         print("patten: " + patten)
-        if patten in input_code:
+        index = input_code.find(patten)
+        if index != -1:
             print('found code: from boristown.' + lib + ' import')
             #找到该行代码的位置
             #find the position of that line of code
-            index = input_code.find("from boristown." + lib + " import")
+            #index = input_code.find("from boristown." + lib + " import")
             #找到该行代码的结尾位置
             #find the end position of that line of code
             end_index = input_code.find("\n", index)
