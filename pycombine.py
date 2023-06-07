@@ -34,7 +34,7 @@ if __name__ == '__main__':
         for lib in boristown_libs:
             #检查input_code中是否有代码：from boristown.[lib] import ...
             #check if there is code in input_code: from boristown.[lib] import ...
-            patten = "from boristown." + lib + " import"
+            patten = "\nfrom boristown." + lib + " import"
             print("patten: " + patten)
             index = input_code.find(patten)
             if index != -1:
