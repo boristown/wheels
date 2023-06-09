@@ -2,6 +2,8 @@ import sys
 
 input = sys.stdin.readline
 
+print = sys.stdout.write
+
 #int input
 def inp():
     return(int(input()))
@@ -25,3 +27,13 @@ def invr():
 #matrix input
 def inmt(n):
     return [inlt() for _ in range(n)]
+
+#Print List in a line
+def prtlist(lst):
+    print(' '.join(map(str,lst)))
+
+#Print List in separate lines
+def prtlist2(lst):
+    for i in lst:
+        print(i)
+        
