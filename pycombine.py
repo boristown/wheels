@@ -45,7 +45,7 @@ if __name__ == '__main__':
                 #index = input_code.find("from boristown." + lib + " import")
                 #找到该行代码的结尾位置
                 #find the end position of that line of code
-                end_index = input_code.find("\n", index)
+                end_index = input_code.find("\n", index+1)
                 #注释该行代码
                 #comment out that line of code
                 input_code = input_code.replace("from boristown." + lib + " import", "#from boristown." + lib + " import")
