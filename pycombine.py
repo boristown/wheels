@@ -29,37 +29,37 @@ if __name__ == '__main__':
     #check if there is code in input_code: from boristown.[lib] import ...
     #if there is, comment out that line of code, and then copy the code in the corresponding lib file in boristown folder to input_code
     #where [lib] is an element in boristown_libs
-    while True:
-        find = False
-        for lib in boristown_libs:
-            #检查input_code中是否有代码：from boristown.[lib] import ...
-            #check if there is code in input_code: from boristown.[lib] import ...
-            patten = "\nfrom boristown." + lib + " import"
-            print("patten: " + patten)
-            index = input_code.find(patten)
-            if index != -1:
-                find = True
-                print('found code: ' + patten)
-                #找到该行代码的位置
-                #find the position of that line of code
-                #index = input_code.find("from boristown." + lib + " import")
-                #找到该行代码的结尾位置
-                #find the end position of that line of code
-                end_index = input_code.find("\n", index+1)
-                #注释该行代码
-                #comment out that line of code
-                input_code = input_code.replace("from boristown." + lib + " import", "#from boristown." + lib + " import")
-                #打开boristown文件夹下对应的lib文件，读取其中的代码
-                #open the corresponding lib file in boristown folder and read the code in it
-                lib_file = open(boristown_path + "/" + lib + ".py", 'r')
-                lib_code = lib_file.read()
-                lib_file.close()
-                end_index+=1
-                #把lib_code中的代码复制到input_code中，被注释的代码之后
-                #copy the code in lib_code to input_code, after the commented out code
-                input_code = input_code[:end_index] + "\n" + lib_code + "\n" +  input_code[end_index:]
-        if not find:
-            break
+    #while True:
+    #find = False
+    for lib in boristown_libs:
+        #检查input_code中是否有代码：from boristown.[lib] import ...
+        #check if there is code in input_code: from boristown.[lib] import ...
+        patten = "\nfrom boristown." + lib + " import"
+        print("patten: " + patten)
+        index = input_code.find(patten)
+        if index != -1:
+            #find = True
+            print('found code: ' + patten)
+            #找到该行代码的位置
+            #find the position of that line of code
+            #index = input_code.find("from boristown." + lib + " import")
+            #找到该行代码的结尾位置
+            #find the end position of that line of code
+            end_index = input_code.find("\n", index+1)
+            #注释该行代码
+            #comment out that line of code
+            input_code = input_code.replace("from boristown." + lib + " import", "#from boristown." + lib + " import")
+            #打开boristown文件夹下对应的lib文件，读取其中的代码
+            #open the corresponding lib file in boristown folder and read the code in it
+            lib_file = open(boristown_path + "/" + lib + ".py", 'r')
+            lib_code = lib_file.read()
+            lib_file.close()
+            end_index+=1
+            #把lib_code中的代码复制到input_code中，被注释的代码之后
+            #copy the code in lib_code to input_code, after the commented out code
+            input_code = input_code[:end_index] + "\n" + lib_code + "\n" +  input_code[end_index:]
+        #if not find:
+        #    break
 
     #解析代码，提取其中引用的文件
     #parse the code and extract the files referenced in it
