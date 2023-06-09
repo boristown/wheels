@@ -3,7 +3,7 @@
 
 # How to use
 
-Write codes in **in.py**
+## Write codes in **in.py**
 
 ``` Python
 # -*- coding: utf-8 -*-
@@ -28,9 +28,9 @@ class Solution:
         return bs.search_min(check, 0, nums[-1] - nums[0])
 ```
 
-run pycombine.bat
+## run **pycombine.bat**
 
-See generated code in **out.py**
+## See generated code in **out.py**
 
 ``` Python
 # -*- coding: utf-8 -*-
