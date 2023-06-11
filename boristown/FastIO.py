@@ -32,6 +32,12 @@ def inmt(n):
 def prtlist(lst):
     print(' '.join(map(str,lst)))
 
+def println(s):
+    print(str(s)+'\n')
+
+def flush():
+    sys.stdout.flush()
+    
 #Print List in separate lines
 def prtlist2(lst):
     for i in lst:

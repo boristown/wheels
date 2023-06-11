@@ -18,8 +18,8 @@ if __name__ == '__main__':
     #提取文件名
     boristown_libs = [file.split("\\")[-1].split(".")[0] for file in boristown_files]
     #打开输入文件，读取其中的代码
-    #open the input file and read the code in it
-    input_file = open(input_path, 'r')
+    #open the input file and read the code in it (utf-8)
+    input_file = open(input_path, 'r', encoding='utf-8')
     input_code = input_file.read()
     input_file.close()
 
@@ -65,8 +65,8 @@ if __name__ == '__main__':
     #parse the code and extract the files referenced in it
 
     #打开输出文件，写入代码
-    #open the output file and write the code in it
-    output_file = open(output_path, 'w')
+    #open the output file and write the code in it (utf-8)
+    output_file = open(output_path, 'w', encoding='utf-8')
     output_file.write(input_code)
 
     #关闭输出文件
